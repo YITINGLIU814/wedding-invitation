@@ -53,7 +53,10 @@ h2{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:400;margin:10px 0 22px}p{marg
     <p class="opening-hint">點擊後進入婚禮邀請</p>
   </div>
 </section>
-<button class="music" id="musicBtn" aria-label="播放背景音樂" title="背景音樂：方大同－特別的人">♫</button><audio id="bgMusic" loop preload="metadata"></audio>
+<button class="music" id="musicBtn" aria-label="播放背景音樂" title="背景音樂：方大同－特別的人">♫</button>
+<audio id="bgMusic" loop preload="metadata">
+  <source src="wedding-music.mp3" type="audio/mpeg">
+</audio>
 <header class="hero" id="top">
   <div class="hero-inner">
     <div class="eyebrow">The Wedding Invitation</div>
@@ -194,26 +197,46 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
+
+const openingScreen = document.getElementById("openingScreen");
+const openInvitationButton = document.getElementById("openInvitationButton");
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+function updateMusicButton(isPlaying) {
+  musicBtn.textContent = isPlaying ? "♫" : "♪";
+  musicBtn.setAttribute("aria-label", isPlaying ? "暫停背景音樂" : "播放背景音樂");
+  musicBtn.setAttribute("aria-pressed", String(isPlaying));
+}
+
+async function playMusic() {
+  try {
+    await bgMusic.play();
+    updateMusicButton(true);
+  } catch (error) {
+    updateMusicButton(false);
+    console.log("音樂播放失敗：", error);
+  }
+}
+
 openInvitationButton.addEventListener("click", function () {
   openingScreen.classList.add("is-hidden");
-  musicToggle.classList.add("is-visible");
-
-  if (youtubeReady) {
-    startWeddingMusic();
-  }
+  musicBtn.classList.add("is-visible");
+  playMusic();
 });
 
-musicToggle.addEventListener("click", function () {
-  if (!youtubeReady || !youtubePlayer) return;
-
-  if (isMusicPlaying) {
-    youtubePlayer.pauseVideo();
+musicBtn.addEventListener("click", async function () {
+  if (bgMusic.paused) {
+    await playMusic();
   } else {
-    youtubePlayer.playVideo();
+    bgMusic.pause();
+    updateMusicButton(false);
   }
 });
 
-
+bgMusic.addEventListener("ended", function () {
+  updateMusicButton(false);
+});
 </script>
 <script src="https://www.youtube.com/iframe_api"></script>
 </body>
