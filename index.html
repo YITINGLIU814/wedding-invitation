@@ -9,55 +9,7 @@
 <style>
 :root{--paper:#f5f1eb;--cream:#ebe4da;--taupe:#a89a8a;--ink:#4b4742;--muted:#82786e;--gold:#b29a70;--white:#fffdfa}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;letter-spacing:.04em;line-height:1.9}a{color:inherit}.serif{font-family:"Bodoni 72","Didot","Times New Roman",serif;letter-spacing:.08em}.wrap{width:min(100% - 36px,900px);margin:auto}.eyebrow{font-size:.68rem;letter-spacing:.25em;color:var(--muted);text-transform:uppercase}.section{padding:90px 0}.center{text-align:center}.rule{width:42px;height:1px;background:var(--gold);margin:20px auto}.hero{min-height:100svh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(245,241,235,.18),rgba(245,241,235,.86)),url('images/hero.jpg') center/cover no-repeat,#d9d0c5}.hero:before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,253,250,.75);pointer-events:none}.hero-inner{position:relative;padding:80px 20px;animation:rise 1.2s ease both}.hero .eyebrow{color:#645d55}.hero h1{font-size:clamp(2.4rem,8vw,5.3rem);font-weight:400;line-height:1.18;margin:20px 0 16px}.hero .cn-names{font-size:1.05rem;letter-spacing:.35em}.date-line{margin-top:32px;font-size:.8rem;letter-spacing:.2em}.scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:.65rem;letter-spacing:.2em;color:#6e665d}.scroll span{display:block;animation:bob 1.6s infinite}
-h2{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:400;margin:10px 0 22px}p{margin:10px 0}.intro{max-width:600px;margin:auto}.story{background:var(--white)}.story-copy{max-width:620px;margin:24px auto 0;font-size:.95rem}.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:center;margin-top:35px}.photo{min-height:260px;background:linear-gradient(135deg,#e7dfd5,#d3c7b9);display:grid;place-items:center;overflow:hidden;position:relative}.photo img{width:100%;height:100%;min-height:inherit;object-fit:cover;display:block}.photo.tall{min-height:440px}.photo-note{font-size:.8rem;color:var(--muted);text-align:center;padding:25px}.photo-stack{display:grid;gap:16px}.details{background:#e9e2d8}.detail-card{max-width:620px;margin:30px auto 0;padding:36px 28px;background:rgba(255,253,250,.7);border:1px solid rgba(178,154,112,.45);text-align:center}.detail-row{padding:13px 0;border-bottom:1px solid #ded5ca}.detail-row:last-child{border:0}.detail-label{font-size:.68rem;letter-spacing:.18em;color:var(--muted)}.btn{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border:1px solid var(--gold);padding:11px 22px;margin:10px 6px;font-size:.82rem;transition:.25s;background:transparent;cursor:pointer;color:var(--ink)}.btn:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.rsvp{
-  position:relative;
-  isolation:isolate;
-  background:linear-gradient(rgba(245,241,235,.78),rgba(239,232,222,.88)),url('images/closing.jpg') center/cover no-repeat;
-}
-.custom-rsvp-panel{
-  max-width:650px;
-  margin:30px auto 0;
-  padding:clamp(22px,5vw,44px);
-  text-align:left;
-  background:rgba(255,253,250,.48);
-  border:1px solid rgba(178,154,112,.42);
-  box-shadow:0 12px 38px rgba(75,71,66,.045);
-  backdrop-filter:blur(5px);
-  -webkit-backdrop-filter:blur(5px);
-}
-.custom-rsvp-form{display:grid;gap:23px}
-.form-field{min-width:0;margin:0;padding:0;border:0}
-.form-field>label,.form-field>legend{
-  display:block;margin-bottom:8px;color:#75695d;font-size:.82rem;letter-spacing:.12em
-}
-.form-field label span,.form-field legend span{color:var(--gold)}
-.form-field input[type="text"],.form-field input[type="tel"],.form-field select,.form-field textarea{
-  display:block;width:100%;border:0;border-bottom:1px solid rgba(130,120,110,.48);
-  border-radius:0;background:rgba(255,253,250,.22);padding:12px 10px;
-  color:var(--ink);font:inherit;font-size:.92rem;letter-spacing:.04em;outline:none;
-  transition:border-color .2s,background .2s;box-shadow:none
-}
-.form-field input:focus,.form-field select:focus,.form-field textarea:focus{
-  border-bottom-color:var(--gold);background:rgba(255,253,250,.52)
-}
-.form-field input::placeholder,.form-field textarea::placeholder{color:#a59a8e}
-.form-field select{appearance:auto;cursor:pointer}
-.form-field textarea{resize:vertical;min-height:86px}
-.attendance-field{display:flex;flex-wrap:wrap;gap:12px 24px}
-.attendance-field legend{width:100%}
-.choice{display:flex!important;align-items:center;gap:9px;margin:0!important;color:var(--ink)!important;font-size:.88rem!important;letter-spacing:.03em!important;cursor:pointer}
-.choice input{accent-color:#a58c64;width:16px;height:16px}
-.rsvp-submit{
-  justify-self:center;min-width:190px;border:1px solid #a58c64;background:#71665a;color:#fffdfa;
-  padding:12px 28px;font:inherit;font-size:.84rem;letter-spacing:.16em;cursor:pointer;
-  transition:background .2s,transform .2s
-}
-.rsvp-submit:hover{background:#5b5148;transform:translateY(-1px)}
-.rsvp-submit:disabled{opacity:.6;cursor:wait;transform:none}
-.rsvp-status{margin:0;text-align:center;color:#82786e;font-size:.76rem}
-@media(max-width:600px){.custom-rsvp-panel{padding:24px 20px}.attendance-field{gap:12px 18px}}
-
+h2{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:400;margin:10px 0 22px}p{margin:10px 0}.intro{max-width:600px;margin:auto}.story{background:var(--white)}.story-copy{max-width:620px;margin:24px auto 0;font-size:.95rem}.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:center;margin-top:35px}.photo{min-height:260px;background:linear-gradient(135deg,#e7dfd5,#d3c7b9);display:grid;place-items:center;overflow:hidden;position:relative}.photo img{width:100%;height:100%;min-height:inherit;object-fit:cover;display:block}.photo.tall{min-height:440px}.photo-note{font-size:.8rem;color:var(--muted);text-align:center;padding:25px}.photo-stack{display:grid;gap:16px}.details{background:#e9e2d8}.detail-card{max-width:620px;margin:30px auto 0;padding:36px 28px;background:rgba(255,253,250,.7);border:1px solid rgba(178,154,112,.45);text-align:center}.detail-row{padding:13px 0;border-bottom:1px solid #ded5ca}.detail-row:last-child{border:0}.detail-label{font-size:.68rem;letter-spacing:.18em;color:var(--muted)}.btn{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border:1px solid var(--gold);padding:11px 22px;margin:10px 6px;font-size:.82rem;transition:.25s;background:transparent;cursor:pointer;color:var(--ink)}.btn:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}.rsvp{background:var(--white)}
 .embedded-form-wrap{max-width:720px;margin:28px auto 0;text-align:left;border:1px solid #e5ddd3;border-radius:12px;overflow:hidden;background:#fffdfa;box-shadow:0 10px 32px rgba(75,71,66,.04)}
 .form-setup-message{padding:42px 24px;text-align:center;color:var(--ink)}
 .form-setup-message strong{display:block;font-size:1.1rem;font-weight:400;margin:8px 0}
@@ -152,51 +104,16 @@ h2{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:400;margin:10px 0 22px}p{marg
 </section>
 <section class="section rsvp" id="rsvp">
   <div class="wrap center reveal">
-    <div class="eyebrow">Kindly Reply</div>
-    <h2>期待與你相見</h2>
-    <div class="rule"></div>
-    <p class="form-note">為方便我們安排座位與相關事宜，請協助填寫以下出席回覆。</p>
-
-    <div class="custom-rsvp-panel">
-      <form id="customRsvpForm" class="custom-rsvp-form">
-        <div class="form-field">
-          <label for="guestName">姓名 <span>*</span></label>
-          <input id="guestName" name="name" type="text" autocomplete="name" placeholder="請填寫您的姓名" required>
-        </div>
-
-        <fieldset class="form-field attendance-field">
-          <legend>是否出席 <span>*</span></legend>
-          <label class="choice"><input type="radio" name="attendance" value="出席" required><span>很期待參加</span></label>
-          <label class="choice"><input type="radio" name="attendance" value="無法出席"><span>當天不克出席</span></label>
-        </fieldset>
-
-        <div class="form-field">
-          <label for="guestCount">出席人數 <span>*</span></label>
-          <select id="guestCount" name="guestCount" required>
-            <option value="" selected disabled>請選擇人數</option>
-            <option value="1">1 位</option>
-            <option value="2">2 位</option>
-            <option value="3">3 位</option>
-            <option value="4">4 位</option>
-            <option value="5">5 位</option>
-            <option value="6 位以上">6 位以上</option>
-            <option value="0">無法出席（0 位）</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="guestPhone">聯絡電話</label>
-          <input id="guestPhone" name="phone" type="tel" autocomplete="tel" placeholder="方便時再填寫">
-        </div>
-
-        <div class="form-field">
-          <label for="guestNote">備註</label>
-          <textarea id="guestNote" name="note" rows="3" placeholder="飲食需求或想告訴我們的話"></textarea>
-        </div>
-
-        <button class="rsvp-submit" id="rsvpSubmit" type="submit">送出出席回覆</button>
-        <p class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite">資料僅供婚宴安排使用。</p>
-      </form>
+    <div class="eyebrow">Kindly Reply</div><h2>期待與你相見</h2><div class="rule"></div>
+    <p class="form-note">為方便我們安排座位與相關事宜，請協助填寫以下出席回覆。填寫完成後，資料會直接送至我們的回覆表單。</p>
+    <div class="embedded-form-wrap" id="embeddedFormWrap">
+      <div id="formSetupMessage" class="form-setup-message">
+        <div class="form-setup-icon">♡</div>
+        <strong>出席回覆表單即將開放</strong>
+        <p>完成 Google 表單設定後，表單就會直接顯示在這裡，不需要離開電子喜帖。</p>
+        <p class="small"></p>
+      </div>
+      <iframe id="rsvpFrame" title="婚禮出席回覆表單" src="about:blank" loading="lazy" width="100%" height="1550" frameborder="0" marginheight="0" marginwidth="0" style="display:none;border:0;background:transparent">載入中…</iframe>
     </div>
     <p class="form-note" style="margin-top:18px">謝謝你願意與我們分享這份喜悅 🤍</p>
   </div>
@@ -214,42 +131,22 @@ h2{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:400;margin:10px 0 22px}p{marg
 <footer class="footer">MADE WITH LOVE · 2027.01.17</footer>
 <script>
 /*
- * 先部署下方附帶的 Google Apps Script，並將 Web App URL 貼到 APPS_SCRIPT_URL。
- * 未設定 URL 時，表單會提示尚未完成資料儲存設定，不會假裝已送出。
+ * 將 Google 表單「嵌入 HTML」中的 src 網址貼到下方引號內。
+ * 注意：這裡需要的是 /viewform?embedded=true 形式的嵌入網址，
+ * 不是一般公開填寫網址，也不是編輯網址。
  */
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIiXauatoqY2sE9gKRsy5MplJn9P-frd8ZPxAP6cugbqHwXzHpGei3E_X45pDAOCZ2/exec";
-const customRsvpForm = document.getElementById("customRsvpForm");
-const rsvpStatus = document.getElementById("rsvpStatus");
-const rsvpSubmit = document.getElementById("rsvpSubmit");
-
-customRsvpForm.addEventListener("submit", async function(event) {
-  event.preventDefault();
-
-  if (!APPS_SCRIPT_URL.startsWith("https://script.google.com/")) {
-    rsvpStatus.textContent = "表單版面已完成，尚待設定回覆儲存功能；請先完成網站表單串接。";
-    return;
-  }
-
-  const data = new URLSearchParams(new FormData(customRsvpForm));
-  rsvpSubmit.disabled = true;
-  rsvpSubmit.textContent = "送出中…";
-  rsvpStatus.textContent = "正在送出，請稍候。";
-
-  try {
-    await fetch(APPS_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: data
-    });
-    customRsvpForm.reset();
-    rsvpStatus.textContent = "已送出回覆，謝謝你！若有疑問，歡迎直接聯絡新人。";
-  } catch (error) {
-    rsvpStatus.textContent = "送出時遇到問題，請稍後再試，或直接聯絡新人。";
-  } finally {
-    rsvpSubmit.disabled = false;
-    rsvpSubmit.textContent = "送出出席回覆";
-  }
-});
+const RSVP_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe14kMaGcgnXiJWjuWXnQooZRbPdztnwaIJXD_WOyyV_3HYrQ/viewform?embedded=true";
+const rsvpFrame = document.getElementById("rsvpFrame");
+const formSetupMessage = document.getElementById("formSetupMessage");
+if (RSVP_EMBED_URL.trim()) {
+  rsvpFrame.src = RSVP_EMBED_URL;
+  rsvpFrame.style.display = "block";
+  formSetupMessage.style.display = "none";
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);} });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 </script>
 <script>
 const openingScreen = document.getElementById("openingScreen");
