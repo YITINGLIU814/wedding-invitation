@@ -1,0 +1,1 @@
+請將婚紗照放在此資料夾，並命名為 hero.jpg、photo-1.jpg、photo-2.jpg、photo-3.jpg、closing.jpg。
