@@ -46,7 +46,8 @@ Google 表單可用「依據答案前往不同區段」：
 1. 在 Google Forms 建立表單。
 2. 按「傳送」或「發布」並複製公開填寫網址（不是編輯網址）。
 3. 開啟 `index.html` 編輯，搜尋 `const RSVP_FORM_URL = "";`
-4. 把網址放在雙引號內，例如 `const RSVP_FORM_URL = "https://docs.google.com/forms/d/e/你的表單ID/viewform";`
+4. 把網址放在雙引號內，例如 `const RSVP_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe14kMaGcgnXiJWjuWXnQooZRbPdztnwaIJXD_WOyyV_3HYrQ/viewform?embedded=true
+";`
 5. 儲存並重新上傳 `index.html` 到 GitHub，網站就會顯示可用的回覆按鈕。
 6. 在 Google 表單的「回覆」頁籤，連結 Google 試算表，方便整理出席人數與地址。
 
